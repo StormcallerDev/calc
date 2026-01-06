@@ -91,22 +91,22 @@ def main() -> None:
 
     while True:
         info("")
-        x: float = get_number("Enter first number: ")
+        x: float | None = get_number("Enter first number: ")
         if x is None:
             info("Exiting program")
             break
 
-        y: float = get_number("Enter second number: ")
+        y: float | None = get_number("Enter second number: ")
         if y is None:
             info("Exiting program")
             break
 
-        op: str = get_operator()
+        op: str | None = get_operator()
         if op is None:
             info("Exiting program")
             break
 
-        result: float = OPERATORS[op](x, y)
+        result: float | None = OPERATORS[op](x, y)
         if result is None:
             error("Divide by zero")
         else:
